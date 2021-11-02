@@ -1,6 +1,6 @@
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import Main from "./Pages/Main";
+import Main from "./pages/Main";
 import scrollActive from "./utils/scrollActive";
 import scrollTop from "./utils/scrollTop";
 

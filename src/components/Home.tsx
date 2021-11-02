@@ -63,8 +63,8 @@ export default function Home(): JSX.Element {
               Mid level experience in web design and development knowledge,
               producing quality work.
             </p>
-            <a href="#contact" className="button button--flex">
-              Contact Me <i className="uil uil-message button__icon"></i>
+            <a href="#portfolio" className="button button--flex">
+              Portfolio <i className="uil uil-message button__icon"></i>
             </a>
           </div>
         </div>
