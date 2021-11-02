@@ -3,7 +3,7 @@ import { saveAs } from "file-saver";
 import cv from "../assets/pdf/Michael-CV.pdf";
 export default function About(): JSX.Element {
   const saveFile = () => {
-    saveAs(cv);
+    saveAs(cv,"Michael Jones CV");
   };
   return (
     <section className="about section" id="about">
