@@ -12,19 +12,19 @@ export default function Contactme(): JSX.Element {
   const onSubmit = (e: { preventDefault: () => void }) => {
     console.log("working",toSend);
     e.preventDefault();
-    // send(
-    //   "service_m303rqq",
-    //   "template_hbfy914",
-    //   toSend,
-    //   "user_L9voAx1lmmDANAn4aYLVg"
-    // )
-    //   .then((response) => {
-    //     console.log("SUCCESS!", response.status, response.text, toSend);
-    //   })
-    //   .catch((err) => {
-    //     console.log("FAILED...", err);
-    //   });
-    // setToSend({ from_name: "", to_name: "Michael", message: "", reply_to: "" });
+    send(
+      "service_m303rqq",
+      "template_hbfy914",
+      toSend,
+      "user_L9voAx1lmmDANAn4aYLVg"
+    )
+      .then((response) => {
+        console.log("SUCCESS!", response.status, response.text, toSend);
+      })
+      .catch((err) => {
+        console.log("FAILED...", err);
+      });
+    setToSend({ from_name: "", to_name: "Michael", message: "", reply_to: "" });
   };
 
   const handleChange = (e: { target: { name: string; value: string } }) => {
