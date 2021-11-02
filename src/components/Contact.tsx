@@ -10,7 +10,7 @@ export default function Contactme(): JSX.Element {
   });
 
   const onSubmit = (e: { preventDefault: () => void }) => {
-    console.log("working",toSend);
+    console.log("working", toSend);
     e.preventDefault();
     send(
       "service_m303rqq",
@@ -76,7 +76,8 @@ export default function Contactme(): JSX.Element {
                 value={toSend.from_name}
                 onChange={handleChange}
                 className="contact__input"
-              required/>
+                required
+              />
             </div>
             <div className="contact__content">
               <label htmlFor="" className="contact__label">
