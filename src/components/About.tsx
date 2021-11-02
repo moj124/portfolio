@@ -1,6 +1,10 @@
 import about_image from "../assets/img/full-background.jpeg";
-
+import { saveAs } from "file-saver";
+import cv from "../assets/pdf/Michael-CV.pdf";
 export default function About(): JSX.Element {
+  const saveFile = () => {
+    saveAs(cv);
+  };
   return (
     <section className="about section" id="about">
       <h2 className="section__title">About Me</h2>
@@ -41,8 +45,8 @@ export default function About(): JSX.Element {
           <div className="about__buttons">
             {/* <!--==================== Change your CV ====================--> */}
             <a
-              download=""
-              href="../assets/pdf/Michael-CV.pdf"
+              href="/#about"
+              onClick={saveFile}
               className="button button--flex"
             >
               Download CV <i className="uil uil-download-alt button__icon"></i>
