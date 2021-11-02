@@ -1,4 +1,35 @@
+import { useState } from "react";
+import { send } from "emailjs-com";
+
 export default function Contactme(): JSX.Element {
+  const [toSend, setToSend] = useState({
+    from_name: "",
+    to_name: "Michael",
+    message: "",
+    reply_to: "",
+  });
+
+  const onSubmit = (e: { preventDefault: () => void }) => {
+    console.log("working",toSend);
+    e.preventDefault();
+    // send(
+    //   "service_m303rqq",
+    //   "template_hbfy914",
+    //   toSend,
+    //   "user_L9voAx1lmmDANAn4aYLVg"
+    // )
+    //   .then((response) => {
+    //     console.log("SUCCESS!", response.status, response.text, toSend);
+    //   })
+    //   .catch((err) => {
+    //     console.log("FAILED...", err);
+    //   });
+    // setToSend({ from_name: "", to_name: "Michael", message: "", reply_to: "" });
+  };
+
+  const handleChange = (e: { target: { name: string; value: string } }) => {
+    setToSend({ ...toSend, [e.target.name]: e.target.value });
+  };
   return (
     <section className="contact section" id="contact">
       <h2 className="section__title">Contact Me</h2>
@@ -33,19 +64,32 @@ export default function Contactme(): JSX.Element {
           </div>
         </div>
 
-        <form action="" className="contact__form grid">
+        <form onSubmit={onSubmit} className="contact__form grid">
           <div className="contact__inputs grid">
             <div className="contact__content">
               <label htmlFor="" className="contact__label">
                 Name
               </label>
-              <input type="text" className="contact__input" />
+              <input
+                type="text"
+                name="from_name"
+                value={toSend.from_name}
+                onChange={handleChange}
+                className="contact__input"
+              required/>
             </div>
             <div className="contact__content">
               <label htmlFor="" className="contact__label">
                 Email
               </label>
-              <input type="email" className="contact__input" />
+              <input
+                type="email"
+                name="reply_to"
+                value={toSend.reply_to}
+                onChange={handleChange}
+                className="contact__input"
+                required
+              />
             </div>
           </div>
           <div className="contact__content">
@@ -53,18 +97,20 @@ export default function Contactme(): JSX.Element {
               Message
             </label>
             <textarea
-              name=""
-              id=""
+              name="message"
+              value={toSend.message}
+              onChange={handleChange}
               cols={0}
               rows={7}
               className="contact__input"
+              required
             ></textarea>
           </div>
           <div>
-            <a href="/#" className="button button--flex">
+            <button type="submit" className="button button--flex">
               Send Message
               <i className="uil uil-message button__icon"></i>
-            </a>
+            </button>
           </div>
         </form>
       </div>
