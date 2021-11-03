@@ -41,7 +41,7 @@ export default function Contactme(): JSX.Element {
             <i className="uil uil-phone contact__icon"></i>
             <div>
               <h3 className="contact__title">Call Me</h3>
-              <span className="contact__subtitle">075391233</span>
+              <span className="contact__subtitle">+447535912633</span>
             </div>
           </div>
 
