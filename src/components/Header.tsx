@@ -52,6 +52,16 @@ function Header(): JSX.Element {
 
             <li className="nav__item">
               <a
+                href="/#qualification"
+                className="nav__link"
+                onClick={() => setShowMenu(!showMenu)}
+              >
+                <i className="uil uil-scenery nav__icon"></i> Qualification
+              </a>
+            </li>
+
+            <li className="nav__item">
+              <a
                 href="/#portfolio"
                 className="nav__link"
                 onClick={() => setShowMenu(!showMenu)}
